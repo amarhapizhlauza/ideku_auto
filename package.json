@@ -1,0 +1,32 @@
+{
+  "name": "Ideku_auto",
+  "version": "1.0.2",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "qc": "node -e \"require('datejs'); const dateTime = Date.today().setTimeToNow().toString('yyyyMMdd_HHmmss'); require('child_process').execSync(`cross-env NODE_ENV=qc mocha --timeout 0 ./tests_explorer/features/**/*.js --reporter mocha-multi-reporters --reporterOptions configFile=./config/configQC.json,cmrOutput=mocha-junit-reporter+testsuitesTitle+NamaScrum:mocha-junit-reporter+mochaFile+${dateTime}:mochawesome+reportFilename+${dateTime}`,{stdio: 'inherit'})\"& cross-env NODE_ENV=qc node ./tests_explorer/utils/xml_data_time.js",
+    "staging": "node -e \"require('datejs'); const dateTime = Date.today().setTimeToNow().toString('yyyyMMdd_HHmmss'); require('child_process').execSync(`cross-env NODE_ENV=staging mocha --timeout 0 ./tests_explorer/features/**/*.js --reporter mocha-multi-reporters --reporterOptions configFile=./config/configSTAGING.json,cmrOutput=mocha-junit-reporter+testsuitesTitle+NamaScrum:mocha-junit-reporter+mochaFile+${dateTime}:mochawesome+reportFilename+${dateTime}`,{stdio: 'inherit'})\"& cross-env NODE_ENV=staging node ./tests_explorer/utils/xml_data_time.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.6",
+    "chromedriver": "^129.0.1",
+    "cross-env": "^7.0.3",
+    "datejs": "^1.0.0-rc3",
+    "dotenv": "^16.0.0",
+    "faker": "^6.6.6",
+    "https": "^1.0.0",
+    "jimp": "^0.22.12",
+    "mocha": "^10.0.0",
+    "mocha-junit-reporter": "^2.0.2",
+    "mocha-multi-reporters": "^1.5.1",
+    "mochawesome": "^7.0.1",
+    "mssql": "^9.0.1",
+    "node-encoder": "^2.0.4",
+    "path": "^0.12.7",
+    "selenium-webdriver": "^4.1.1",
+    "urlencode": "^1.1.0",
+    "webdriver-manager": "^12.1.8"
+  }
+}
