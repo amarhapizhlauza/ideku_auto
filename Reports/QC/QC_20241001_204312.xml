@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<testsuites name="NamaScrum" time="35.0480" tests="4" failures="0">
+  <testsuite name="" timestamp="2024-10-01T20:43:12" tests="0" time="0.0000" failures="0"/>
+  <testsuite name="QC.Authentication" timestamp="2024-10-01T20:43:12" tests="4" file="C:\Users\amarh\Downloads\Ideku\ideku_auto\tests_explorer\features\1.auth\login.js" time="35.0410" failures="0">
+    <testcase name="Login successfull" time="1.8970" classname="Authentication"/>
+    <testcase name="Login without Username" time="0.2030" classname="Authentication"/>
+    <testcase name="Login without Password" time="0.2090" classname="Authentication"/>
+    <testcase name="Login failed" time="1.4850" classname="Authentication"/>
+  </testsuite>
+</testsuites>

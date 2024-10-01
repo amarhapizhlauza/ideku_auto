@@ -1,0 +1,219 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-10-01T13:43:13.521Z",
+    "end": "2024-10-01T13:43:48.569Z",
+    "duration": 35048,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ba519b1a-c05e-4128-a9bd-f834ced1b327",
+      "title": "",
+      "fullFile": "C:\\Users\\amarh\\Downloads\\Ideku\\ideku_auto\\tests_explorer\\features\\1.auth\\login.js",
+      "file": "\\tests_explorer\\features\\1.auth\\login.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cee650f1-e3c4-4256-a24d-41ece6d59f0a",
+          "title": "Authentication",
+          "fullFile": "C:\\Users\\amarh\\Downloads\\Ideku\\ideku_auto\\tests_explorer\\features\\1.auth\\login.js",
+          "file": "\\tests_explorer\\features\\1.auth\\login.js",
+          "beforeHooks": [
+            {
+              "title": "\"before each\" hook in \"Authentication\"",
+              "fullTitle": "Authentication \"before each\" hook in \"Authentication\"",
+              "timedOut": false,
+              "duration": 7135,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "driver = await initial.load('chrome', process.env.URL_LOGIN)\nconst LoginPage = new loginPage(driver)\nawait LoginPage.isLoaded()",
+              "err": {},
+              "uuid": "5f69a0aa-9d73-48d2-8248-7392b50fe0f9",
+              "parentUUID": "cee650f1-e3c4-4256-a24d-41ece6d59f0a",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after each\" hook in \"Authentication\"",
+              "fullTitle": "Authentication \"after each\" hook in \"Authentication\"",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "if (this.currentTest.state == 'failed') {\n  let fileName = generate.uniqueByDate('yyyyMMddHHmmss')\n  let image = await driver.takeScreenshot()\n  await fsp.writeFile('Reports/screenshots/' + fileName + '.jpg', image, 'base64')\n  let imageFileName = fileName + '.jpg';\n  \n  addContext(this, 'Screenshot of failed test')\n  addContext(this, '../screenshots/' + imageFileName)\n}",
+              "err": {},
+              "uuid": "61d0d11a-3485-4a92-a493-4b4572f0e635",
+              "parentUUID": "cee650f1-e3c4-4256-a24d-41ece6d59f0a",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"after each\" hook in \"Authentication\"",
+              "fullTitle": "Authentication \"after each\" hook in \"Authentication\"",
+              "timedOut": false,
+              "duration": 221,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.close();\nawait driver.quit();",
+              "err": {},
+              "uuid": "33a56e98-fe1c-40b4-a73e-a4ec7cb12054",
+              "parentUUID": "cee650f1-e3c4-4256-a24d-41ece6d59f0a",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Login successfull",
+              "fullTitle": "Authentication Login successfull",
+              "timedOut": false,
+              "duration": 1897,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const LoginPage = new loginPage(driver)\nawait LoginPage.login(\"Admin\", \"admin123\")\nawait LoginPage.checkDashboard()",
+              "err": {},
+              "uuid": "3e4433cd-0fb4-472c-a121-ee8cf7a006a3",
+              "parentUUID": "cee650f1-e3c4-4256-a24d-41ece6d59f0a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login without Username",
+              "fullTitle": "Authentication Login without Username",
+              "timedOut": false,
+              "duration": 203,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const LoginPage = new loginPage(driver)\nawait LoginPage.login(\"\", \"admin123\")\nlet result = await LoginPage.checkRequired()\nresult.should.equal(\"Required\")",
+              "err": {},
+              "uuid": "6ff5f89e-3541-4b4d-8662-ac723d1978e0",
+              "parentUUID": "cee650f1-e3c4-4256-a24d-41ece6d59f0a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login without Password",
+              "fullTitle": "Authentication Login without Password",
+              "timedOut": false,
+              "duration": 209,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const LoginPage = new loginPage(driver)\nawait LoginPage.login(\"Admin\", \"\")\nlet result = await LoginPage.checkRequired()\nresult.should.equal(\"Required\")",
+              "err": {},
+              "uuid": "d25266cf-3772-4386-a196-825b72c0a25a",
+              "parentUUID": "cee650f1-e3c4-4256-a24d-41ece6d59f0a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login failed",
+              "fullTitle": "Authentication Login failed",
+              "timedOut": false,
+              "duration": 1485,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const LoginPage = new loginPage(driver)\nawait LoginPage.login(\"asd\", \"asd\")\nlet result = await LoginPage.checkFailed()\nresult.should.equal(\"Invalid credentials\")",
+              "err": {},
+              "uuid": "6b1ca867-4d56-4e6d-9c89-d5c57c0113d3",
+              "parentUUID": "cee650f1-e3c4-4256-a24d-41ece6d59f0a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3e4433cd-0fb4-472c-a121-ee8cf7a006a3",
+            "6ff5f89e-3541-4b4d-8662-ac723d1978e0",
+            "d25266cf-3772-4386-a196-825b72c0a25a",
+            "6b1ca867-4d56-4e6d-9c89-d5c57c0113d3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3794,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.0.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "QC_20241001_204312",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "./Reports/QC",
+        "reportFilename": "QC_20241001_204312",
+        "reportTitle": "QC",
+        "reportPageTitle": "QC"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
